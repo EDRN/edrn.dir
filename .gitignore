@@ -1,0 +1,29 @@
+# Copyright © 2020 California Institute of Technology ("Caltech").
+# ALL RIGHTS RESERVED. U.S. Government sponsorship acknowledged.
+
+*.egg-info
+*.ldif
+*.log
+*.py[co]
+*.spec
+*.sublime-*
+.*.cfg
+.*.swp
+.DS_Store
+.eggs
+.eggs
+__pycache__
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+parts/
+testdist/
+typescript
+
+# Temporary files
+*~
+
+# other stuff
+*.sublime-*
