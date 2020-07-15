@@ -25,7 +25,7 @@ PATH=/usr/local/bin:/usr/bin:/bin
 export PATH
 
 passwords="$HOME/.secrets/passwords.sh"
-server="ldaps://edrn.jpl.nasa.gov"
+server="ldaps://edrn-ds.jpl.nasa.gov"
 manager="uid=admin,ou=system"
 edrn_ldap_manager_password=${EDRN_LDAP_MANAGER_PASSWORD:-secret}
 date=`date '+%Y-%m-%d'`
@@ -55,7 +55,7 @@ ldapsearch \
     -D "$manager" \
     -s "sub" \
     -b "dc=edrn,dc=jpl,dc=nasa,dc=gov" \
-    '(&(objectClass=*)(!(dc=edrn)))' > "edrn-$date.ldif"
+    '(&(objectClass=*)(!(dc=edrn)))' '*' '+' > "edrn-$date.ldif"
 
 
 # MCL
@@ -72,7 +72,7 @@ ldapsearch \
     -D "$manager" \
     -s "sub" \
     -b "o=MCL" \
-    '(&(objectClass=*)(!(o=MCL)))' > "mcl-$date.ldif"
+    '(&(objectClass=*)(!(o=MCL)))' '*' '+' > "mcl-$date.ldif"
 
 
 # Done
