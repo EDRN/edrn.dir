@@ -91,6 +91,8 @@ while :; do
             echo "💥 Failed to restart Apache DS; giving up" 1>&2
             exit 2
         fi
+        # It can take a long time for ApacheDS to come back. It's Java.
+        sleep 30
     elif [ $rc -ne 0 ]; then
         # No, some other error, abort
         echo "💣 Apache DS query got unexpected result $rc; giving up" 1>&2
