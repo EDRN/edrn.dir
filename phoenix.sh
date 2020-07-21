@@ -80,7 +80,7 @@ while :; do
     env LDAPCONF=$ldaprc LDAPTLS_REQCERT=never ldapsearch \
         -A -l $wait -b uid=admin,ou=system -s sub -D $manager \
         -H ldaps://edrn-ds.jpl.nasa.gov -w "$edrn_ldap_manager_password" \
-        -x '(uid=admin)' dn >/dev/null
+        -x '(uid=admin)' uid >/dev/null
     rc=$?
 
     # Timeout?
