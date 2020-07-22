@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# phoenix.sh — Restart the dumb Apache Directory Service as needed 😡
+# phoenix.sh — Restart the Apache Directory Service as needed 😡
 #
 # This script runs an LDAP query and if it fails with exit code 254 (time
 # out?) it'll restart Apache DS on the host edrn-ds.jpl.nasa.gov
