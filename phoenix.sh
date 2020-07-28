@@ -19,6 +19,7 @@ manager="uid=admin,ou=system"
 frequency=1
 wait=1
 ldapsearch_exit_timeout=254
+ldapsearch_other_error=255
 
 
 edrn_ldap_manager_password=${EDRN_LDAP_MANAGER_PASSWORD:-secret}
@@ -84,7 +85,7 @@ while :; do
     rc=$?
 
     # Timeout?
-    if [ $rc -eq $ldapsearch_exit_timeout ]; then
+    if [ $rc -eq $ldapsearch_exit_timeout -o $rc -eq $ldapsearch_other_error ]; then
         # Yes, restart it
         env SUDO_ASKPASS=$askpass sudo --askpass /etc/init.d/apacheds restart
         if [ $? -ne 0 ]; then
